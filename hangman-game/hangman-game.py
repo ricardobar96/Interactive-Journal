@@ -49,7 +49,7 @@ def check_letter(letter, word, lives, correct):
 
     if lives == 0:
         end = lose()
-    elif correct == quantity_letters:
+    elif correct == letters:
         end = win(word)
 
     return end, lives, correct
@@ -66,3 +66,16 @@ def win(word):
     return True
 
 word, letters = random_word(words)
+
+while not end_game:
+    print('\n' + '*' * 20 + '\n')
+    show_word(word)
+    print('\n')
+    print("Failures: " + '-'.join(failures))
+    print(f'Lives: {lives}')
+    print('\n' + '*' * 20 + '\n')
+
+    letter = ask_letter()
+    lives, game_ended, successes = check_letter(letter, word, lives, successes)
+
+    end_game = game_ended
