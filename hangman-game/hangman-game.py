@@ -5,6 +5,7 @@ words = ['MOUNTAIN', 'HURRICANE', 'EARTHQUAKE', 'BREAKFAST']
 successes = []
 failures = []
 lives = 7
+correct = 0
 end_game = False
 
 def random_word(words):
@@ -52,7 +53,7 @@ def check_letter(letter, word, lives, correct):
     elif correct == letters:
         end = win(word)
 
-    return end, lives, correct
+    return lives, end, correct
 
 def lose():
     print("YOU LOSE\n THE WORD WAS " + word)
@@ -76,6 +77,6 @@ while not end_game:
     print('\n' + '*' * 20 + '\n')
 
     letter = ask_letter()
-    lives, game_ended, successes = check_letter(letter, word, lives, successes)
+    lives, game_ended, correct = check_letter(letter, word, lives, correct)
 
     end_game = game_ended
