@@ -5,7 +5,7 @@ words = ['MOUNTAIN', 'HURRICANE', 'EARTHQUAKE', 'BREAKFAST']
 successes = []
 failures = []
 lives = 7
-end_game = false
+end_game = False
 
 def random_word(words):
     word = choice(words)
@@ -24,5 +24,15 @@ def ask_letter():
             is_valid = True
         else:
             print("Please choose a valid letter")
-            
+
     return letter
+
+def show_word(word):
+    solution = []
+
+    for letter in successes:
+        solution.append(letter)
+    else:
+        solution.append('-')
+
+    print(' '.join(solution))
