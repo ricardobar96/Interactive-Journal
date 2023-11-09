@@ -12,3 +12,17 @@ def random_word(words):
     letters = len(set(word))
 
     return word, letters
+
+def ask_letter():
+    letter = ''
+    is_valid = False
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    while not is_valid:
+        letter = input("Choose a letter: ").upper()
+        if letter in alphabet and len(letter) == 1:
+            is_valid = True
+        else:
+            print("Please choose a valid letter")
+            
+    return letter
