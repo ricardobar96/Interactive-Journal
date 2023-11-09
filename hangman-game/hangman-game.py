@@ -36,3 +36,33 @@ def show_word(word):
         solution.append('-')
 
     print(' '.join(solution))
+
+def check_letter(letter, word, lives, correct):
+    end = False
+
+    if letter in word:
+        successes.append(letter)
+        correct += 1
+    else:
+        failures.append(letter)
+        lives -= 1
+
+    if lives == 0:
+        end = lose()
+    elif correct == quantity_letters:
+        end = win(word)
+
+    return end, lives, correct
+
+def lose():
+    print("YOU LOSE\n THE WORD WAS " + word)
+
+    return True
+
+def win(word):
+    show_word(word)
+    print("YOU WIN")
+
+    return True
+
+word, letters = random_word(words)
