@@ -57,13 +57,13 @@ def check_letter(letter, word, lives, correct):
     return lives, end, correct
 
 def lose():
-    print("YOU LOSE\nTHE WORD WAS " + word)
+    print('\n' + "YOU LOSE\nTHE WORD WAS " + word)
 
     return True
 
 def win(word):
     show_word(word)
-    print("YOU WIN")
+    print('\n' + "YOU WIN")
 
     return True
 
