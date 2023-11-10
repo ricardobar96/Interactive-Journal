@@ -1,6 +1,6 @@
 from random import choice
 
-words = ['MOUNTAIN', 'HURRICANE', 'EARTHQUAKE', 'BREAKFAST']
+words = ['MOUNTAIN', 'HURRICANE', 'EARTHQUAKE', 'BREAKFAST', 'DUMPSTER', 'MAGICAL', 'SUBMARINE', 'DESSERT']
 
 successes = []
 failures = []
