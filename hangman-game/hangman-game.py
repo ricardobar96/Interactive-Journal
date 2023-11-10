@@ -24,7 +24,7 @@ def ask_letter():
         if letter in alphabet and len(letter) == 1:
             is_valid = True
         else:
-            print("Please choose a valid letter")
+            print("\nPlease choose a valid letter")
 
     return letter
 
@@ -42,9 +42,11 @@ def show_word(word):
 def check_letter(letter, word, lives, correct):
     end = False
 
-    if letter in word:
+    if letter in word and letter not in successes:
         successes.append(letter)
         correct += 1
+    elif letter in word and letter in successes:
+        print("\nLetter already entered, choose another")
     else:
         failures.append(letter)
         lives -= 1
