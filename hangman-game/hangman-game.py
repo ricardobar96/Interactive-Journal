@@ -31,10 +31,11 @@ def ask_letter():
 def show_word(word):
     solution = []
 
-    for letter in successes:
-        solution.append(letter)
-    else:
-        solution.append('-')
+    for letter in word:
+        if letter in successes:
+            solution.append(letter)
+        else:
+            solution.append('-')
 
     print(' '.join(solution))
 
@@ -56,7 +57,7 @@ def check_letter(letter, word, lives, correct):
     return lives, end, correct
 
 def lose():
-    print("YOU LOSE\n THE WORD WAS " + word)
+    print("YOU LOSE\nTHE WORD WAS " + word)
 
     return True
 
@@ -65,6 +66,7 @@ def win(word):
     print("YOU WIN")
 
     return True
+
 
 word, letters = random_word(words)
 
@@ -77,6 +79,6 @@ while not end_game:
     print('\n' + '*' * 20 + '\n')
 
     letter = ask_letter()
-    lives, game_ended, correct = check_letter(letter, word, lives, correct)
+    lives, end, correct = check_letter(letter, word, lives, correct)
 
-    end_game = game_ended
+    end_game = end
