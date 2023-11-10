@@ -17,11 +17,11 @@ As the game continues, it shows clues to help the player to guess the word, as w
 
 ## Screenshots
 
-![Captura de pantalla 2023-11-10 114701](https://github.com/ricardobar96/small-python-projects/assets/73242474/12b7e5ef-0e82-4f36-acbc-ed0159de8d03)
+![Captura de pantalla 2023-11-10 175613](https://github.com/ricardobar96/small-python-projects/assets/73242474/71a82907-d36d-42c8-9d14-9d38ff39bf85)
 
-![Captura de pantalla 2023-11-10 114720](https://github.com/ricardobar96/small-python-projects/assets/73242474/043d3091-4302-401f-ba3b-cb6fe9cd83e6)
+![Captura de pantalla 2023-11-10 175516](https://github.com/ricardobar96/small-python-projects/assets/73242474/4b97df22-753c-4e37-b198-b2f222117d3d)
 
-![Captura de pantalla 2023-11-10 114750](https://github.com/ricardobar96/small-python-projects/assets/73242474/17498ccc-77f0-43a2-9ffa-98a42ab25d23)
+![Captura de pantalla 2023-11-10 175434](https://github.com/ricardobar96/small-python-projects/assets/73242474/de253a48-ce3a-4182-96b9-839be6dbc444)
 
 ## License
 
