@@ -29,7 +29,7 @@ def start():
         [5] - Delete category
         [6] - Exit''')
         option_menu = input()
-    return option_menu
+    return int(option_menu)
 
 def show_categories(path):
     print("Categories:")
@@ -47,7 +47,7 @@ def show_categories(path):
 def choose_category(list):
     option_correct = "x"
 
-    while not option_correct.isnumeric() or int(option_correct) not in range(1, len(list + 1)):
+    while not option_correct.isnumeric() or int(option_correct) not in range(1, (len(list) + 1)):
         option_correct = input("\nChoose a category: ")
 
     return list[int(option_correct) - 1]
@@ -68,13 +68,13 @@ def show_entries(path):
 def choose_entry(list):
     option_entry = "x"
 
-    while not option_entry.isnumeric() or int(option_entry) not in range(1, len(list + 1)):
+    while not option_entry.isnumeric() or int(option_entry) not in range(1, (len(list) + 1)):
         option_entry = input("\nChoose an entry: ")
 
     return list[int(option_entry) - 1]
 
 def read_entry(entry):
-    print(Path(read_entry(entry)))
+    print(Path.read_text(entry))
 
 def create_entry(path):
     exists = False
@@ -98,7 +98,7 @@ def create_category(path):
 
     while not exists:
         print("Write the name of the category: ")
-        name_category = input() + '.txt'
+        name_category = input()
         path_new = Path(path, name_category)
 
         if not os.path.exists(path_new):
@@ -122,41 +122,44 @@ def go_back():
     while option_back.lower() != "m":
         option_back = input("\nPress M to return to the menu: ")
 
-start()
 
-menu = 0
+close_journal = False
 
-if menu == 1:
-    categories = show_categories(entries_path)
-    category = choose_category(categories)
-    all_entries = show_entries(category)
-    single_entry = choose_entry(all_entries)
-    read_entry(single_entry)
-    go_back()
-    pass
-elif menu == 2:
-    categories = show_categories(entries_path)
-    category = choose_category(categories)
-    create_entry(category)
-    go_back()
-    pass
-elif menu == 3:
-    create_category(entries_path)
-    go_back()
-    pass
-elif menu == 4:
-    categories = show_categories(entries_path)
-    category = choose_category(categories)
-    all_entries = show_entries(category)
-    single_entry = choose_entry(all_entries)
-    delete_entry(single_entry)
-    go_back()
-    pass
-elif menu == 5:
-    categories = show_categories(entries_path)
-    category = choose_category(categories)
-    delete_category(category)
-    go_back()
-    pass
-elif menu == 6:
-    pass
+while not close_journal:
+    menu = start()
+
+    if menu == 1:
+        categories = show_categories(entries_path)
+        category = choose_category(categories)
+        all_entries = show_entries(category)
+        if len(all_entries) < 1:
+            print("No entries found for this category")
+        else:
+            single_entry = choose_entry(all_entries)
+            read_entry(single_entry)
+        go_back()
+    elif menu == 2:
+        categories = show_categories(entries_path)
+        category = choose_category(categories)
+        create_entry(category)
+        go_back()
+    elif menu == 3:
+        create_category(entries_path)
+        go_back()
+    elif menu == 4:
+        categories = show_categories(entries_path)
+        category = choose_category(categories)
+        all_entries = show_entries(category)
+        if len(all_entries) < 1:
+            print("No entries found for this category")
+        else:
+            single_entry = choose_entry(all_entries)
+            delete_entry(single_entry)
+        go_back()
+    elif menu == 5:
+        categories = show_categories(entries_path)
+        category = choose_category(categories)
+        delete_category(category)
+        go_back()
+    elif menu == 6:
+        close_journal = True
