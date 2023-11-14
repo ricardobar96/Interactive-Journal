@@ -11,6 +11,12 @@ def count_entries(path):
     return counter
 
 def start():
+    system('cls')
+    print('*' * 50)
+    print('*' * 5 + " JOURNAL INITIATED " + '*' * 5)
+    print('*' * 50)
+
+start()
 
 menu = 0
 
