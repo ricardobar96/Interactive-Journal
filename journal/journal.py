@@ -31,19 +31,36 @@ def start():
         option_menu = input()
     return option_menu
 
+def show_categories(path):
+    print("Categories:")
+    categories_path = Path(path)
+    list_categories = []
+    counter = 1
+
+    for folder in categories_path.iterdir():
+        folder_str = str(folder.name)
+        print(f"[{counter}] - [{folder_str}]")
+        list_categories.append(folder)
+        counter += 1
+    return list_categories
+
 start()
 
 menu = 0
 
 if menu == 1:
+    categories = show_categories(entries_path)
     pass
 elif menu == 2:
+    categories = show_categories(entries_path)
     pass
 elif menu == 3:
     pass
 elif menu == 4:
+    categories = show_categories(entries_path)
     pass
 elif menu == 5:
+    categories = show_categories(entries_path)
     pass
 elif menu == 6:
     pass
