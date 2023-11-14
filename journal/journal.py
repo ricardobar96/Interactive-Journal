@@ -1,3 +1,9 @@
+import os
+from pathlib import Path
+from os import system
+
+path = Path(Path.home())
+
 menu = 0
 
 if menu == 1:
