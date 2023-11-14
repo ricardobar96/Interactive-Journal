@@ -108,6 +108,14 @@ def create_category(path):
         else:
             print("Category already exists")
 
+def delete_entry(entry):
+    Path(entry).unlink()
+    print(f"The entry {entry.name} was deleted")
+
+def delete_category(category):
+    Path(category).rmdir()
+    print(f"The category {category.name} was deleted")
+
 start()
 
 menu = 0
@@ -132,10 +140,12 @@ elif menu == 4:
     category = choose_category(categories)
     all_entries = show_entries(category)
     single_entry = choose_entry(all_entries)
+    delete_entry(single_entry)
     pass
 elif menu == 5:
     categories = show_categories(entries_path)
     category = choose_category(categories)
+    delete_category(category)
     pass
 elif menu == 6:
     pass
