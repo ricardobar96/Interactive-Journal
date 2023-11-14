@@ -65,6 +65,14 @@ def show_entries(path):
         counter += 1
     return list_entries
 
+def choose_entry(list):
+    option_entry = "x"
+
+    while not option_entry.isnumeric() or int(option_entry) not in range(1, len(list + 1)):
+        option_entry = input("\nChoose an entry: ")
+
+    return list[int(option_entry) - 1]
+
 start()
 
 menu = 0
@@ -73,6 +81,7 @@ if menu == 1:
     categories = show_categories(entries_path)
     category = choose_category(categories)
     all_entries = show_entries(category)
+    single_entry = choose_entry(all_entries)
     pass
 elif menu == 2:
     categories = show_categories(entries_path)
@@ -84,6 +93,7 @@ elif menu == 4:
     categories = show_categories(entries_path)
     category = choose_category(categories)
     all_entries = show_entries(category)
+    single_entry = choose_entry(all_entries)
     pass
 elif menu == 5:
     categories = show_categories(entries_path)
