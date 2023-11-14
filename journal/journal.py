@@ -116,6 +116,12 @@ def delete_category(category):
     Path(category).rmdir()
     print(f"The category {category.name} was deleted")
 
+def go_back():
+    option_back = "x"
+
+    while option_back.lower() != "m":
+        option_back = input("\nPress M to return to the menu: ")
+
 start()
 
 menu = 0
@@ -126,14 +132,17 @@ if menu == 1:
     all_entries = show_entries(category)
     single_entry = choose_entry(all_entries)
     read_entry(single_entry)
+    go_back()
     pass
 elif menu == 2:
     categories = show_categories(entries_path)
     category = choose_category(categories)
     create_entry(category)
+    go_back()
     pass
 elif menu == 3:
     create_category(entries_path)
+    go_back()
     pass
 elif menu == 4:
     categories = show_categories(entries_path)
@@ -141,11 +150,13 @@ elif menu == 4:
     all_entries = show_entries(category)
     single_entry = choose_entry(all_entries)
     delete_entry(single_entry)
+    go_back()
     pass
 elif menu == 5:
     categories = show_categories(entries_path)
     category = choose_category(categories)
     delete_category(category)
+    go_back()
     pass
 elif menu == 6:
     pass
