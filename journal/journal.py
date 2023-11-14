@@ -44,6 +44,14 @@ def show_categories(path):
         counter += 1
     return list_categories
 
+def choose_category(list):
+    option_correct = "x"
+
+    while not option_correct.isnumeric() or int(option_correct) not in range(1, len(list + 1)):
+        option_correct = input("\nChoose a category: ")
+
+    return list[int(option_correct) - 1]
+
 start()
 
 menu = 0
