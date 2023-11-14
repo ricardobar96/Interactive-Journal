@@ -73,6 +73,9 @@ def choose_entry(list):
 
     return list[int(option_entry) - 1]
 
+def read_entry(entry):
+    print(Path(read_entry(entry)))
+
 start()
 
 menu = 0
@@ -82,6 +85,7 @@ if menu == 1:
     category = choose_category(categories)
     all_entries = show_entries(category)
     single_entry = choose_entry(all_entries)
+    read_entry(single_entry)
     pass
 elif menu == 2:
     categories = show_categories(entries_path)
