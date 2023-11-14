@@ -18,6 +18,19 @@ def start():
     print("\n")
     print(f"Total entries: {count_entries(entries_path)}")
 
+    option_menu = 'x'
+    while not option_menu.isnumeric() or int(option_menu) not in range(1,7):
+        print("Choose an option:")
+        print('''
+        [1] - Read entry
+        [2] - New entry
+        [3] - New category
+        [4] - Delete entry
+        [5] - Delete category
+        [6] - Exit''')
+        option_menu = input()
+    return option_menu
+
 start()
 
 menu = 0
