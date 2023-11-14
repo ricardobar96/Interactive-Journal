@@ -93,6 +93,21 @@ def create_entry(path):
         else:
             print("Entry already exists")
 
+def create_category(path):
+    exists = False
+
+    while not exists:
+        print("Write the name of the category: ")
+        name_category = input() + '.txt'
+        path_new = Path(path, name_category)
+
+        if not os.path.exists(path_new):
+            Path.mkdir(path_new)
+            print(f"The category {name_category} was created")
+            exists = True
+        else:
+            print("Category already exists")
+
 start()
 
 menu = 0
@@ -110,6 +125,7 @@ elif menu == 2:
     create_entry(category)
     pass
 elif menu == 3:
+    create_category(entries_path)
     pass
 elif menu == 4:
     categories = show_categories(entries_path)
