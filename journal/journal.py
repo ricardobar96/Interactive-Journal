@@ -2,7 +2,15 @@ import os
 from pathlib import Path
 from os import system
 
-path = Path(Path.home())
+entries_path = Path("Entries")
+
+def count_entries(path):
+    counter = 0
+    for txt in Path(path).glob("**/*.txt"):
+        counter += 1
+    return counter
+
+def start():
 
 menu = 0
 
