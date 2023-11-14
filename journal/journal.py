@@ -52,23 +52,42 @@ def choose_category(list):
 
     return list[int(option_correct) - 1]
 
+def show_entries(path):
+    print("Entries:")
+    all_entries_path = Path(path)
+    list_entries = []
+    counter = 1
+
+    for entry in all_entries_path.glob('*.txt'):
+        entry_str = str(entry.name)
+        print(f"[{counter}] - [{entry_str}]")
+        list_entries.append(entry)
+        counter += 1
+    return list_entries
+
 start()
 
 menu = 0
 
 if menu == 1:
     categories = show_categories(entries_path)
+    category = choose_category(categories)
+    all_entries = show_entries(category)
     pass
 elif menu == 2:
     categories = show_categories(entries_path)
+    category = choose_category(categories)
     pass
 elif menu == 3:
     pass
 elif menu == 4:
     categories = show_categories(entries_path)
+    category = choose_category(categories)
+    all_entries = show_entries(category)
     pass
 elif menu == 5:
     categories = show_categories(entries_path)
+    category = choose_category(categories)
     pass
 elif menu == 6:
     pass
