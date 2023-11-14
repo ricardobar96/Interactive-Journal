@@ -15,6 +15,8 @@ def start():
     print('*' * 50)
     print('*' * 5 + " JOURNAL INITIATED " + '*' * 5)
     print('*' * 50)
+    print("\n")
+    print(f"Total entries: {count_entries(entries_path)}")
 
 start()
 
