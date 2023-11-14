@@ -76,6 +76,23 @@ def choose_entry(list):
 def read_entry(entry):
     print(Path(read_entry(entry)))
 
+def create_entry(path):
+    exists = False
+
+    while not exists:
+        print("Write the name of your entry: ")
+        name_entry = input() + '.txt'
+        print("Write your new entry: ")
+        content_entry = input()
+        path_new = Path(path, name_entry)
+
+        if not os.path.exists(path_new):
+            Path.write_text(path_new, content_entry)
+            print(f"Your entry {name_entry} was created")
+            exists = True
+        else:
+            print("Entry already exists")
+
 start()
 
 menu = 0
@@ -90,6 +107,7 @@ if menu == 1:
 elif menu == 2:
     categories = show_categories(entries_path)
     category = choose_category(categories)
+    create_entry(category)
     pass
 elif menu == 3:
     pass
