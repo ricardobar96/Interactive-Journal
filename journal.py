@@ -19,7 +19,7 @@ def start():
     print(f"Total entries: {count_entries(entries_path)}")
 
     option_menu = 'x'
-    while not option_menu.isnumeric() or int(option_menu) not in range(1,7):
+    while not option_menu.isnumeric() or int(option_menu) not in range(1,8):
         print("Choose an option:")
         print('''
         [1] - Read entry
@@ -27,7 +27,8 @@ def start():
         [3] - New category
         [4] - Delete entry
         [5] - Delete category
-        [6] - Exit''')
+        [6] - Play Hangman Game
+        [7] - Exit''')
         option_menu = input()
     return int(option_menu)
 
@@ -162,4 +163,6 @@ while not close_journal:
         delete_category(category)
         go_back()
     elif menu == 6:
+        os.system('python hangman-game.py')
+    elif menu == 7:
         close_journal = True
