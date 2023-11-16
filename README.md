@@ -32,6 +32,7 @@
 
 ![Captura de pantalla 2023-11-16 125413](https://github.com/ricardobar96/interactive-journal/assets/73242474/5ebb7ec4-e466-4fd3-aa74-00387f1be3ac)
 
+![Captura de pantalla 2023-11-16 125606](https://github.com/ricardobar96/interactive-journal/assets/73242474/d9d8ad60-32c8-4577-8218-15fdbdfc92b5)
 
 ## License
 
