@@ -1,5 +1,5 @@
 # Interactive Journal
-Interactive Journal created with Python that also includes an app that allows the user to play a game of Hangman. 
+<b>Interactive Journal</b> created with <b>Python</b>. It includes an app that allows the user to play a game of <b>Hangman</b>. 
 <br>
 <br>
 
